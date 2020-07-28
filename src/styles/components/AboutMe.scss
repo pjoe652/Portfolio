@@ -1,0 +1,124 @@
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20rem 0 0 10rem;
+  color: white;
+
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: lighter;
+    }
+  
+    .sub-title {
+      font-size: 3rem;
+      font-weight: lighter;
+    }
+  
+    .links {
+      font-size: 3rem;
+  
+      .fab {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .expanded-container {
+    display: flex;
+    width: 100%;
+
+    .expand-button-wrapper {
+      display: flex;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+
+      .expand-button {
+        &:before {
+          display: block;
+          content: "";
+          cursor: pointer;
+          border-top: 1.5rem solid transparent;
+          border-left: 2rem solid white;
+          border-bottom: 1.5rem solid transparent;
+          transition: all 0.3s ease-in;
+        }
+
+        &:hover {
+          &:before {
+            border-left: 2rem solid #c96537;
+          }
+        }
+      }
+
+      &.slide-out {
+        transform: translateX(2rem);
+        opacity: 0;
+      }
+    }
+
+    .intro-container {
+      display: flex;
+      flex-direction: row;
+      opacity: 0;
+      padding-left: 4rem;
+      pointer-events: none;
+
+      &.slide-in {
+        transition-delay: 0.7s;
+        transition-property: all;
+        transition-duration: 0.5s;
+        transform: translateX(-2rem);
+        opacity: 1;
+        pointer-events: all;
+        width: auto;
+        padding-right: 10rem;
+      }
+
+      .intro {
+        font-size: 1.5rem;
+        font-weight: lighter;
+        width: 100%;
+        padding-right: 2.5rem;
+      }
+
+      .skill-level-container {
+        width: 100%;
+
+        .skill-container {
+          display: flex;
+          flex-direction: column;
+
+          .skill-name {
+            font-size: 1.5rem;
+            font-weight: lighter;
+          }
+
+          .bar {
+            display: flex;
+            padding-bottom: 1rem;
+
+            .filled {
+              width: 0%;
+              height: 2px;
+              background-color: #c96537;
+              transition-delay: 1s;
+              transition-property: width;
+              transition-duration: 1s;
+            }
+
+            .unfilled {
+              width: 100%;
+              height: 2px;
+              background-color: #111111;
+            }
+          }
+        }
+      }
+    }
+  }
+}

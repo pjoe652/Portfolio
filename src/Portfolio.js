@@ -4,20 +4,19 @@ import './styles/main.scss'
 import Header from './components/Header';
 import ExperienceComponent from './components/ExperienceComponent';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import AboutMe from './components/AboutMe';
 
 class Portfolio extends React.Component {
   render() {
     return (
-      <div className="app-container">
+      <React.Fragment >
         <Header />
-        <Router>
-          <Switch>
-            <Route path="/">
-              <ExperienceComponent />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
+        <div className="app-container">
+          
+          <AboutMe />
+          <ExperienceComponent />
+        </div>
+      </React.Fragment>
     )
   }
 }
