@@ -7,23 +7,62 @@
   .intro-container {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 65%;
 
-    .title {
-      font-size: 3.5rem;
-      font-weight: lighter;
-    }
+    .main-header-container {
+      display: flex;
+      flex-direction: row;
+
+      .headers {
+        .title {
+          font-size: 3.5rem;
+          font-weight: lighter;
+        }
+      
+        .sub-title {
+          font-size: 3rem;
+          font-weight: lighter;
+        }
+      }
+
+      .expand-button-wrapper {
+        display: flex;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        padding-left: 2rem;
   
-    .sub-title {
-      font-size: 3rem;
-      font-weight: lighter;
+        .fas {
+          cursor: pointer;
+          font-size: 5rem;
+          transition: color 0.2s ease-in-out;
+  
+          &:hover{
+            color: #c96537;
+          }
+        }
+  
+        &.slide-out {
+          transform: translateX(2rem);
+          opacity: 0;
+        }
+      }
     }
   
     .links {
       font-size: 3rem;
-  
-      .fab {
-        padding-right: 1rem;
+
+      a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.2s ease;
+
+        .fab {
+          padding-right: 1rem;
+        }
+
+        &:hover {
+          color: #c96537;
+        }
       }
     }
   }
@@ -32,40 +71,11 @@
     display: flex;
     width: 100%;
 
-    .expand-button-wrapper {
-      display: flex;
-      align-items: center;
-      transition: all 0.5s ease-in-out;
-
-      .expand-button {
-        &:before {
-          display: block;
-          content: "";
-          cursor: pointer;
-          border-top: 1.5rem solid transparent;
-          border-left: 2rem solid white;
-          border-bottom: 1.5rem solid transparent;
-          transition: all 0.3s ease-in;
-        }
-
-        &:hover {
-          &:before {
-            border-left: 2rem solid #c96537;
-          }
-        }
-      }
-
-      &.slide-out {
-        transform: translateX(2rem);
-        opacity: 0;
-      }
-    }
-
     .intro-container {
       display: flex;
       flex-direction: row;
       opacity: 0;
-      padding-left: 4rem;
+      padding-left: 2rem;
       pointer-events: none;
 
       &.slide-in {

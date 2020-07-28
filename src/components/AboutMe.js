@@ -25,26 +25,35 @@ class AboutMe extends React.Component {
     return(
       <div className="about-me-container">
         <div className="intro-container">
-          <span className="title">
-            Hi, I'm Peter Joe.
-          </span>
-          <span className="sub-title">
-            I'm a full-stack web developer.
-          </span>
+          <div className="main-header-container">
+            <div className="headers">
+              <span className="title">
+                Hi, I'm Peter Joe.
+              </span>
+              <br/>
+              <span className="sub-title">
+                I'm a full-stack web developer.
+              </span>
+            </div>
+            <div className={cx({
+                "expand-button-wrapper": true,
+                "slide-out": exposeMoreAboutMe
+              })}
+              onClick={this.onExpandMoreClick}
+            >
+              <i class="fas fa-chevron-right"/>
+            </div>
+          </div>
           <div className="links">
-            <i class="fab fa-linkedin" />
-            <i class="fab fa-github-square" />
+            <a href="https://www.linkedin.com/in/peter-joe-17673b186/">
+             <i class="fab fa-linkedin" />
+            </a>
+            <a href="https://github.com/pjoe652">
+              <i class="fab fa-github-square" />
+            </a>
           </div>
         </div>
         <div className="expanded-container">
-          <div className={cx({
-              "expand-button-wrapper": true,
-              "slide-out": exposeMoreAboutMe
-            })}
-            onClick={this.onExpandMoreClick}
-          >
-            <a className="expand-button"/>
-          </div>
           <div className={cx({
             "intro-container": true,
             "slide-in": exposeMoreAboutMe
@@ -61,8 +70,8 @@ class AboutMe extends React.Component {
                       { skill.skill }
                     </span>
                     <div className="bar">
-                      <a className="filled" style={{width: `${exposeMoreAboutMe ? skill.percentage[0] : 0}%`}}/>
-                      <a className="unfilled" style={{width: `${exposeMoreAboutMe ? skill.percentage[1] : 0}%`}}/>
+                      <div className="filled" style={{width: `${exposeMoreAboutMe ? skill.percentage[0] : 0}%`}}/>
+                      <div className="unfilled" style={{width: `${exposeMoreAboutMe ? skill.percentage[1] : 0}%`}}/>
                     </div>
                   </div>
                 )
