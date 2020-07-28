@@ -1,7 +1,4 @@
 import React from 'react'
-import uoa from '../uoa_text.png'
-import emerge from '../emerge.png'
-import pg from '../pg.png'
 
 class ExperienceComponent extends React.Component {
   render() {
@@ -11,7 +8,7 @@ class ExperienceComponent extends React.Component {
           <div className="experience-wrapper">
             <div className="time-header">
               <span>October 2018</span>
-              <a className="arrow" />
+              <div className="arrow" />
             </div>
             <span className="company">
               University of Auckland
@@ -21,7 +18,7 @@ class ExperienceComponent extends React.Component {
           <div className="experience-wrapper">
             <div className="time-header">
               November 2018
-              <a className="arrow" />
+              <div className="arrow" />
             </div>
             <span className="company">
               E-Merge Data Solutions
@@ -31,7 +28,7 @@ class ExperienceComponent extends React.Component {
           <div className="experience-wrapper">
             <div className="time-header">
               February 2019
-              <a className="arrow" />
+              <div className="arrow" />
             </div>
             <span className="company">
               University of Auckland
