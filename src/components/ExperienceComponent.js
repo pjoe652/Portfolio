@@ -1,49 +1,37 @@
 import React from 'react'
+import { experience } from '../constants/experience'
 
 class ExperienceComponent extends React.Component {
   render() {
     return (
       <div className="experience-container">
+        <div className="title-wrapper">
+          <span className="work-experience-title">
+            Work Experience Timeline
+          </span>
+          <div className="underline"/>
+        </div>
         <div className="workplace-container"> 
-          <div className="experience-wrapper">
-            <div className="time-header">
-              <span>October 2018</span>
-              <div className="arrow" />
-            </div>
-            <span className="company">
-              University of Auckland
-            </span>
-            Summer Researcher
-          </div>
-          <div className="experience-wrapper">
-            <div className="time-header">
-              November 2018
-              <div className="arrow" />
-            </div>
-            <span className="company">
-              E-Merge Data Solutions
-            </span>
-            Intern
-          </div>
-          <div className="experience-wrapper">
-            <div className="time-header">
-              February 2019
-              <div className="arrow" />
-            </div>
-            <span className="company">
-              University of Auckland
-            </span>
-            Summer Researcher
-          </div>
-          <div className="experience-wrapper">
-            <div className="time-header">
-              November 2019
-            </div>
-            <span className="company">
-              Perpetual Guardian
-            </span>
-            Junior Analyst Programmer
-          </div>
+        {
+          experience.map((job, i) => {
+            return(
+              <div className="experience-wrapper">
+                <div className="time-header">
+                  <span className="time">
+                    {job.timeStarted}
+                  </span>
+                  {
+                    i !== experience.length - 1 && <div className="arrow" />
+                  }
+                </div>
+                <span className="company">
+                  {job.company}
+                </span>
+                {job.position}
+              </div>
+            )
+          })
+        }
         </div>
       </div>
     )

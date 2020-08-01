@@ -5,13 +5,45 @@
   width: 100%;
   height: 100%;
   background-color: #222222;
-  padding-bottom: 2rem;
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .work-experience-title {
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: lighter;
+      color: white;
+      padding-bottom: 1rem;
+      transition: color 0.3s;
+
+    }
+
+    .underline {
+      height: 2px;
+      width: 0%;
+      background-color: #c96537;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .underline {
+        width: 100%;
+      }
+
+      .work-experience-title {
+        color: #c96537;
+      }
+    }
+  }
 
   .workplace-container {
     display: flex;
     flex-direction: row;
-    padding-top: 2rem;
     width: 100%;
+    height: 100%;
 
     .experience-wrapper {
       text-align: center;
@@ -19,6 +51,10 @@
       flex-direction: column;
       width: 100%;
       color: white;
+      padding-bottom: 2rem;
+      background-color: #111111;
+      opacity: 0.6;
+      transition: opacity 0.3s;
 
       .time-header {
         display: flex;
@@ -28,15 +64,29 @@
         height: 3rem;
         width: 100%;
         background-color: #c96537;
-        opacity: 1;
         margin-bottom: 1rem;
 
+        .time {
+          font-size: 1.5rem;
+          font-weight: lighter;
+        }
+
         .arrow {
+          opacity: 0;
           position: absolute;
           margin-left: calc(100% / 4 + 2rem);
           border-top: 1.5rem solid transparent;
           border-left: 2rem solid #c96537;
           border-bottom: 1.5rem solid transparent;
+          transition: opacity 0.3s;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+
+        .arrow {
+          opacity: 1;
         }
       }
 

@@ -12,7 +12,7 @@ class Header extends React.Component {
         <div className="link-container">
           <div className="link-wrapper">
             <a>
-              Experience
+              Projects
             </a>
             <div className="underline"/>
           </div>

@@ -59,7 +59,7 @@ class AboutMe extends React.Component {
             "slide-in": exposeMoreAboutMe
           })}>
             <div className="intro">
-              I'm a (soon-to-become) graduate of the University of Auckland. I studied Computer Systems Engineering and somehow came to love doing web development.
+              I'm a (soon-to-become) graduate of the University of Auckland. I studied Computer Systems Engineering and somehow came to doing web development.
             </div>
             <div className="skill-level-container">
             {
