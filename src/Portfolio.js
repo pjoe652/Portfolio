@@ -2,11 +2,11 @@ import React from 'react';
 import AboutMe from './components/AboutMe';
 import ExperienceComponent from './components/ExperienceComponent';
 import Header from './components/Header';
-import './styles/main.scss';
-import Projects from './components/Projects';
-import { TabletLand, Phone, Tablet } from './constants/screenWidth';
 import Menu from './components/Menu';
+import Projects from './components/Projects';
+import { Tablet, TabletLand } from './constants/screenWidth';
 import { lockScroll, unlockScroll } from './helpers/screenLock';
+import './styles/main.scss';
 
 class Portfolio extends React.Component {
   constructor(props) {

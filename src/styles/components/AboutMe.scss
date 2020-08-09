@@ -103,11 +103,13 @@
       &.slide-out {
         transform: translateX(2rem);
         opacity: 0;
+        pointer-events: none;
       }
 
       &.slide-down {
         transform: translateY(2rem);
         opacity: 0;
+        pointer-events: none;
       }
     }
   }

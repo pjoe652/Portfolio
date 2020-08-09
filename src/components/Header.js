@@ -7,12 +7,12 @@ class Header extends React.Component {
     return(
       <div className="header-container">
         <div className="title">
-          <img src="/pj.ico" onClick={() => switchRoutes("main")}/>
+          <img src="/pj.ico" alt="" onClick={() => switchRoutes("main")}/>
           {
             viewMode !== "tabletSM" && 
-              <a onClick={() => switchRoutes("main")}>
+              <span onClick={() => switchRoutes("main")}>
                 Peter Joe
-              </a>
+              </span>
           }
         </div>
         <div className="link-container">
@@ -35,9 +35,9 @@ class Header extends React.Component {
                 "selected": route === "project"
               })} onClick={() => switchRoutes("project")}
               >
-                <a>
+                <span>
                   Projects
-                </a>
+                </span>
                 <div className="underline"/>
               </div>
               <div className={cx({
@@ -45,9 +45,9 @@ class Header extends React.Component {
                 "selected": route === "main"
               })} onClick={() => switchRoutes("main")}
               >
-                <a>
+                <span>
                   About Me
-                </a>
+                </span>
                 <div className="underline"/>
               </div>
             </React.Fragment>

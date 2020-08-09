@@ -15,9 +15,9 @@ class Menu extends React.Component {
           "selected": route === "project"
         })} onClick={() => switchRoutes("project")}
         >
-          <a>
+          <span>
             Projects
-          </a>
+          </span>
           <div className="underline"/>
         </div>
         <div className={cx({
@@ -25,9 +25,9 @@ class Menu extends React.Component {
           "selected": route === "main"
         })} onClick={() => switchRoutes("main")}
         >
-          <a>
+          <span>
             About Me
-          </a>
+          </span>
           <div className="underline"/>
         </div>
       </div> 

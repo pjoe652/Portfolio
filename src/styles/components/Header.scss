@@ -30,7 +30,7 @@
       }
     }
 
-    a {
+    span {
       cursor: pointer;
       transition: all 0.3s;
 
@@ -63,7 +63,7 @@
           width: 100%;
         }
 
-        a {
+        span {
           color: #c96537;
         }
       }
@@ -73,7 +73,7 @@
           width: 100%;
         }
 
-        a {
+        span {
           color: #c96537;
         }
       }
@@ -85,7 +85,7 @@
         transition: width 0.3s ease-in-out;
       }
   
-      a {
+      span {
         color: white;
         align-self: center;
         text-decoration: none;
