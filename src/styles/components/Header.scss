@@ -13,16 +13,43 @@
     align-items: center;
     padding-left: 5rem;
     height: 100%;
-    width: 100%;
+    width: 70%;
     font-size: 2.5rem;
     font-weight: lighter;
     color: white;
+    transition: all 0.3s;
+
+    img {
+      cursor: pointer;
+      height: 5rem;
+      padding-right: 1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    a {
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #c96537;
+      }
+    }
+
+    @media screen and (max-width: $tablet){
+      padding-left: 1rem;
+      width: 6rem;
+    }
   }
 
   .link-container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    align-items: center;
 
     .link-wrapper {
       display: flex;
@@ -32,6 +59,16 @@
       cursor: pointer;
   
       &:hover {
+        .underline {
+          width: 100%;
+        }
+
+        a {
+          color: #c96537;
+        }
+      }
+
+      &.selected {
         .underline {
           width: 100%;
         }
@@ -61,6 +98,54 @@
   
       &:last-child {
         margin-right: 8rem;
+
+        @media screen and (max-width: $tablet){
+          margin-right: 3rem;
+        }
+      }
+    }
+
+    .burger-menu {
+      cursor: pointer;
+      display: flex;
+      margin-right: 2rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 4rem;
+      height: 4rem;
+
+      .burger-bar {
+        border-radius: 1rem;
+        padding: 0 0.25rem;
+        width: 100%;
+        height: 0.6rem;
+        background-color: white;
+        transition: background-color 0.3s, transform 0.3s, width 0.3s, opacity linear;
+      }
+
+      &:hover {
+        .burger-bar {
+          background-color: #c96537;
+        }
+      }
+
+      &.cross {
+        .burger-bar {
+          &.top {
+            transform: translateY(1.1rem) rotate(45deg);
+            transform-origin: center center;
+          }
+
+          &.middle {
+            width: 0%;
+          }
+
+          &.bottom {
+            transform: translateY(-1.1rem) rotate(-45deg);
+            transform-origin: center center;
+          }
+        }
       }
     }
   }

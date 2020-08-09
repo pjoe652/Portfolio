@@ -1,0 +1,221 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10rem;
+  background-color: #222222;
+  width: 100%;
+
+  .modal-escape {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    transition: all 0.3s;
+
+    &.hidden {
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+
+  .modal-container {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    min-height: 60%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 7;
+    opacity: 1;
+    background-color: white;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+
+    @media screen and (max-width: $tablet-land) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: $phone) {
+      overflow-y: auto;
+      max-height: 90%;
+    }
+
+    &.hidden {
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      color: black;
+      width: inherit;
+
+      .description-header {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding-bottom: 0.5rem;
+
+        .title {
+          font-size: 2rem;
+          align-self: center;
+        }
+
+        a {
+          font-size: 2.5rem;
+          text-decoration: none;
+          color: black;
+          transition: color 0.2s ease;
+  
+          .fab {
+            padding-left: 1rem;
+          }
+  
+          &:hover {
+            color: #c96537;
+          }
+        }
+      }
+
+      .main {
+        font-size: 1rem;
+        white-space: pre-line;
+      }
+
+      .skills {
+        padding-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: lighter;
+
+        @media screen and (min-width: $tablet) {
+          span:first-child {
+            margin-left: 1rem;
+          }
+        }
+
+        span {
+          cursor: pointer;
+          width: 100%;
+          margin-right: 1rem;
+
+          &:hover {
+            transition: all 0.2s;
+            color: #c96537;
+          }
+        }
+      }
+    }
+
+    .rhs-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 2rem 2rem 2rem 0;
+      max-width: 50vw;
+      overflow: hidden;
+
+      @media screen and (max-width: $tablet-land) {
+        padding-top: 0;
+        padding-right: 0;
+        height: 100%;
+      }
+
+      @media screen and (max-width: $phone) {
+        padding-top: 0;
+        padding-right: 0;
+        height: 100%;
+        overflow: unset;
+      }
+
+      div {
+        width: 100%;
+        min-width: 20rem;
+
+        @media screen and (max-width: $phone) {
+          min-width: unset;
+        }
+      }
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .project-wrapper-row {
+    display: flex;
+    width: 100%;
+    padding-bottom: 2rem;
+
+    .project-wrapper {
+      display: flex;
+      width: 100%;
+      color: white;
+      padding: 0 3rem;
+      font-weight: lighter;
+      justify-content: flex-end;
+      text-align: center;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(-2rem);
+      transition: all 0.5s var(--delay);
+
+      &.active {
+        opacity: 1;
+        transform: translateY(2rem);
+      }
+
+      @media screen and (max-width: $tablet) {
+        padding: 0 1rem;
+      }
+  
+      .title {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+      }
+
+      .image-container {
+        max-height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          cursor: pointer;
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+          transition: all 0.3s;
+        }
+
+        .find-out {
+          cursor: pointer;
+          color: white;
+          opacity: 0;
+          position: relative;
+          top: -8.5rem;
+          font-size: 3rem;
+          transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.5;
+            transform: scale(1.25);
+          }
+
+          .find-out {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

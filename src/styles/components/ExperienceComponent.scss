@@ -1,15 +1,33 @@
 .experience-container {
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
   width: 100%;
   height: 100%;
   background-color: #222222;
+  overflow: hidden;
+  margin-top: auto;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 2rem;
+  }
+
+  &:hover {
+    .title-wrapper {
+      .underline {
+        width: 100%;  
+      }
+  
+      .work-experience-title {
+        color: #c96537;
+      }
+    }
+  }
 
   .title-wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 
     .work-experience-title {
       cursor: pointer;
@@ -27,25 +45,15 @@
       background-color: #c96537;
       transition: width 0.3s ease-in-out;
     }
-
-    &:hover {
-      .underline {
-        width: 100%;
-      }
-
-      .work-experience-title {
-        color: #c96537;
-      }
-    }
   }
 
   .workplace-container {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
 
     .experience-wrapper {
+      cursor: pointer;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -69,6 +77,14 @@
         .time {
           font-size: 1.5rem;
           font-weight: lighter;
+
+          @media screen and (max-width: $tablet-land){
+            font-size: 1rem;
+          }
+
+          @media screen and (max-width: $phone){
+            font-size: 0.75rem;
+          }
         }
 
         .arrow {
@@ -87,6 +103,10 @@
 
         .arrow {
           opacity: 1;
+
+          @media screen and (max-width: $tablet-land){
+            opacity: 0;
+          }
         }
       }
 
@@ -94,14 +114,33 @@
         width: 100%;
       }
 
-      .date {
-        font-size: 1rem;
-        font-weight: bold;
-      }
-
       .company {
         font-size: 2rem;
         font-weight: lighter;
+        padding: 0 0.5rem;
+
+        @media screen and (max-width: $tablet-land){
+          font-size: 1.25rem;
+          padding-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: $phone){
+          font-size: 1rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      .position {
+        font-size: 1.75rem;
+        font-weight: lighter;
+
+        @media screen and (max-width: $tablet-land){
+          font-size: 1rem;
+        }
+
+        @media screen and (max-width: $phone){
+          font-size: 0.75rem;
+        }
       }
     }
   }

@@ -1,0 +1,53 @@
+.menu-container {
+  position: fixed;
+  z-index: 2;
+  top: 7rem;
+  height: calc(100vh - 7rem);
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-bottom: solid 1px #d1d1d1;
+  transition: opacity 0.1s, height 0.3s;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: white;
+
+  @media screen and (min-width: $phone){
+    font-size: 3rem;
+  }
+
+  &.closed {
+    height: 0;
+    pointer-events: none;
+
+    .link-wrapper {
+      opacity: 0;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .link-wrapper {
+    display: flex;
+    padding: 2rem 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 1;
+    transition: all 0.3s;
+
+    &.selected {
+      .underline {
+        width: 100%;
+      }
+
+      a {
+        color: #c96537;
+      }
+    }
+  }
+}

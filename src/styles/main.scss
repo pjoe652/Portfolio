@@ -1,12 +1,19 @@
+@import 'components/breakpoints.scss';
+
+@import 'components/Menu.scss';
+@import 'components/Transition.scss';
 @import 'components/Header.scss';
 @import 'components/ExperienceComponent.scss';
 @import 'components/AboutMe.scss';
+@import 'components/Projects.scss';
 
 .app-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   background-color: #222222;
+  overflow: auto;
 }

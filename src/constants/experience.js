@@ -16,7 +16,7 @@ export const experience = [
   },
   {
     timeStarted: "November 2019",
-    company: "University of Auckland",
-    position: "Summer Researcher"
+    company: "Perpetual Guardian",
+    position: "Junior Analyst Programmer"
   },
 ]

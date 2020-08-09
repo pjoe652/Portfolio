@@ -1,0 +1,11 @@
+.main-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+
+  &.active {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+  }
+}

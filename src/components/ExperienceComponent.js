@@ -27,7 +27,9 @@ class ExperienceComponent extends React.Component {
                 <span className="company">
                   {job.company}
                 </span>
-                {job.position}
+                <span className="position">
+                  {job.position}
+                </span>
               </div>
             )
           })
