@@ -28,11 +28,18 @@ class Projects extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateProjectRow)
+    window.removeEventListener("load", this.removeLoad);
   }
 
   componentDidMount() {
     this.updateProjectRow()
+    document.body.classList.add('loading');
+    window.addEventListener("load", this.removeLoad);
     window.requestAnimationFrame(() => this.setState({ mounted: true }));
+  }
+
+  removeLoad() {
+    document.body.classList.remove('loading');
   }
 
   selectProject = (name) => {

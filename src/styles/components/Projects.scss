@@ -219,3 +219,7 @@
     }
   }
 }
+
+.loading *, .loading *:before, .loading *:after {
+  animation-play-state: paused !important;
+}
